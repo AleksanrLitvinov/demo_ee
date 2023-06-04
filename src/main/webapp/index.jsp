@@ -2,10 +2,19 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <h2>Литвинов Александр Викторович</h2>
+    <title>JSP - TEST</title>
 </head>
 <body>
-     <h3>"Возраст 33"</h3>
-     <h3>"Проживает город Новосибирск"</h3>
+    <h1>
+        Testing JSP
+    </h1>
+<p>
+    <%@page import="java.util.Date, ru.maxima.TestClass" %>
+    <% TestClass testClass = new TestClass(); %>
+
+    <%= testClass.getInfo() %>
+    <br>
+    <%=new Date() %>
+</p>
 </body>
 </html>

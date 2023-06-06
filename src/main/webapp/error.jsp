@@ -11,9 +11,9 @@
     <title>Error</title>
 </head>
 <body>
-<%-- <jsp:include page="set-cookies-servlet">--%>
+ <jsp:include page="set-cookies-servlet">
 
-<%-- </jsp:include>--%>
+ </jsp:include>
 
 </body>
 </html>

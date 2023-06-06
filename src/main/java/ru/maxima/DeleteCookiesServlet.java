@@ -8,7 +8,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-
+//        Создать 3 сервлета, как на уроке с выдачей кукис, печатью кукис и удалением.
+//        Обработать ошибку , если кукис нет, выдавать html-страницу с информацией о том,
+//        что у вас кукис нет, нажмите, чтобы получить и выдавать ссылку на получение кукис,
+//        которая будет вести на страницу http://localhost:8080/get-cookies-servlet
 @WebServlet(name = "deleteCookiesServlet", value = "/delete-cookies-servlet")
 public class DeleteCookiesServlet extends HttpServlet {
     @Override
@@ -21,5 +24,6 @@ public class DeleteCookiesServlet extends HttpServlet {
 
         resp.addCookie(cookie1);
         resp.addCookie(cookie2);
+        req.getRequestDispatcher("/get-cookies-servlet").forward(req, resp);
     }
 }

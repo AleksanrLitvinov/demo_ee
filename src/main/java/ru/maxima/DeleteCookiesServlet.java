@@ -15,8 +15,8 @@ public class DeleteCookiesServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         Cookie cookie1 = new Cookie("jsessionid", "7777777");
         Cookie cookie2 = new Cookie("jsessionsName", "Viktor");
-        cookie1.setMaxAge(60 * 60 * 24);
-        cookie2.setMaxAge(60 * 60 * 24);
+        cookie1.setMaxAge(0);
+        cookie2.setMaxAge(0);
 
 
         resp.addCookie(cookie1);

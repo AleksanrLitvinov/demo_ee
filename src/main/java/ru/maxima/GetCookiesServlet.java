@@ -15,15 +15,19 @@ public class GetCookiesServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
        Cookie[] cookies = req.getCookies();
 
-        PrintWriter pw = resp.getWriter();
+       if (cookies == null){
+           req.getRequestDispatcher("/error.jsp").forward(req, resp);
+       } else {
+           PrintWriter pw = resp.getWriter();
 
-        pw.println("<html>");
+           pw.println("<html>");
 
-        for (Cookie c : cookies) {
-            pw.println("<h1>" + c.getName() + " " + c.getValue() + "</h1>");
-        }
+           for (Cookie c : cookies) {
+               pw.println("<h1>" + c.getName() + " " + c.getValue() + "</h1>");
+           }
+           pw.println("</html>");
+       }
 
-        pw.println("</html>");
 
     }
 }
